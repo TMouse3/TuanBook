@@ -1,58 +1,34 @@
-\# Dự án bán sách
+# 📚 Dự án Website Bán sách
 
+[![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Tomcat](https://img.shields.io/badge/Tomcat-9.0-F8DC75?style=for-the-badge&logo=apache-tomcat&logoColor=black)](https://tomcat.apache.org/)
+[![SQL Server](https://img.shields.io/badge/SQL%20Server-2022-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)](https://www.microsoft.com/en-us/sql-server/)
 
+Dự án website bán sách trực tuyến được xây dựng bằng công nghệ Java Servlet/JSP, tuân thủ mô hình kiến trúc MVC (Model-View-Controller).
 
-Dự án website bán sách được xây dựng bằng Java Servlet/JSP theo mô hình MVC.
+## 🛠 Công nghệ & Yêu cầu hệ thống
+* **Ngôn ngữ:** Java JDK 11 hoặc mới hơn (Dự án này dùng JDK 21).
+* **Web Server:** Apache Tomcat 9.0.
+* **Cơ sở dữ liệu:** SQL Server.
+* **Kiến trúc:** MVC Pattern.
 
+## ⚙️ Hướng dẫn cài đặt & Khởi chạy
 
+### 1. Thiết lập Database
+* Sử dụng file script SQL tại đường dẫn `database/QlSach_Database.sql` để khởi tạo cấu trúc bảng và dữ liệu mẫu.
 
-\## Yêu cầu hệ thống
+### 2. Cấu hình kết nối
+* Tìm file `src/main/java/config.example.properties` và đổi tên thành `config.properties`.
+* Cập nhật các thông số `db.url`, `db.user`, và `db.password` theo cấu hình SQL Server trên máy của bạn.
 
-\* \*\*Java\*\*: JDK 11 hoặc mới hơn (trong dự án này dùng JDK 21).
+### 3. Điều hướng khởi chạy
+Dự án sử dụng các Controller trung tâm để điều phối giao diện:
 
-\* \*\*Server\*\*: Apache Tomcat (Khuyên dùng phiên bản 9.0).
+* **Giao diện Người dùng (Client):** Truy cập và chạy qua `TrangChuController`.
+* **Giao diện Quản trị (Admin):** Truy cập và chạy qua `AdminTrangChuController`.
 
-\* \*\*Database\*\*: SQL Server.
-
-
-
-\## Hướng dẫn cài đặt \& Khởi chạy
-
-
-
-\### 1. Cấu hình Database
-
-\* Sử dụng script SQL trong thư mục `database/QlSach\_Database.sql` để tạo cấu trúc bảng và dữ liệu.
-
-
-
-\### 2. Cấu hình thông tin kết nối
-
-\* Copy file `src/main/java/config.example.properties` và đổi tên thành `config.properties`.
-
-\* Cập nhật thông tin `db.url`, `db.user`, và `db.password` cho phù hợp với máy của bạn.
-
-
-
-\### 3. Cách chạy dự án
-
-Dự án sử dụng các Controller chính để điều hướng:
-
-
-
-\* \*\*Giao diện Người dùng (Client)\*\*: Chạy qua `TrangChuController`.
-
-\* \*\*Giao diện Quản trị (Admin)\*\*: Chạy qua `AdminTrangChuController`.
-
-
-
-\## Thư viện sử dụng
-
-Các file `.jar` hỗ trợ nằm trong thư mục `src/main/webapp/WEB-INF/lib/`, bao gồm:
-
-\* Kết nối SQL Server: `mssql-jdbc`.
-
-\* Upload file: `commons-fileupload`.
-
-\* JSTL: `jstl-1.2.jar`.
-
+## 📦 Thư viện hỗ trợ (Libraries)
+Toàn bộ các file `.jar` cần thiết đã được tích hợp sẵn trong thư mục `src/main/webapp/WEB-INF/lib/`:
+* **Kết nối CSDL:** `mssql-jdbc-13.2.0.jre11.jar`.
+* **Xử lý File:** `commons-fileupload-1.3.1.jar`.
+* **Hiển thị dữ liệu:** `jstl-1.2.jar` và các thẻ tiêu chuẩn.
